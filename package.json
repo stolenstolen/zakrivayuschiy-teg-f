@@ -1,0 +1,32 @@
+{
+  "name": "zakrivayuschiy-teg-f",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/stolenstolen/zakrivayuschiy-teg-f#readme",
+  "bugs": {
+    "url": "https://github.com/stolenstolen/zakrivayuschiy-teg-f/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stolenstolen/zakrivayuschiy-teg-f.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check": "prettier --check '**/*.{html,css,js}'",
+    "format": "prettier --write '**/*.{html,css,js}'",
+    "lint": "stylelint './styles/**/*.css'",
+    "lintfix": "stylelint './styles/**/*.css' --fix",
+    "checkall": "npm run check && npm run lint",
+    "fixall": "npm run format && npm run lintfix"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.1",
+    "stylelint": "^17.4.0",
+    "vite": "^7.3.1"
+  }
+}
