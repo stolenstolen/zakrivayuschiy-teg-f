@@ -10,7 +10,7 @@
   min-block-size: 100dvb;
 }
 
-/*header*/
+/* header */
 
 .header {
   display: grid;
@@ -38,20 +38,21 @@
   text-transform: uppercase;
 }
 
-/*main*/
+/* main */
 
 main {
   display: grid;
   gap: 50px;
 }
 
-/*card*/
+/* card */
 
 .card {
   width: var(--scale-width);
   padding-block-end: 25px;
   background-color: #fff;
-  border: 2px solid #000;
+  box-shadow: inset 0 0 0 2px #000;
+  border: none;
 }
 
 .card__content {
@@ -95,16 +96,8 @@ main {
 ) {
 
   .card__block-image::before {
-    font-family: var(--accent-font), fantasy;
-    font-size: 14px;
-    color: #000d;
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    z-index: 10;
-    content: '</HTML>';
-    -webkit-text-stroke: 1px var(--color-shadow-lable);
     text-stroke: 1px var(--color-shadow-lable);
+    -webkit-text-stroke: 1px var(--color-shadow-lable);
     text-shadow: none;
   }
 }
@@ -117,35 +110,38 @@ main {
   inline-size: 100%;
 }
 
-.sheet {
+/* effects */
+
+.effect-saturate {
   filter: saturate(150%);
 }
 
-.first-victory {
+.effect-contrast {
   filter: contrast(50%);
 }
 
-.ideal {
+.effect-brightness {
   filter: brightness(150%);
 }
 
-.people {
+.effect-muted {
   filter: contrast(50%) saturate(158%);
 }
 
-.strategies {
+.effect-sepia {
   filter: sepia(60%);
 }
 
-.beginning {
+.effect-saturate-strong {
   filter: saturate(200%);
 }
 
-.concentration {
+.effect-blur {
   filter: blur(4px);
 }
 
 .card__block-text {
+  max-width: var(--scale-width);
   display: grid;
   gap: 25px;
   padding-inline: 25px;
@@ -245,16 +241,8 @@ main {
   transition: fill linear 0.3s 0.05s;
 }
 
-.card__like-button {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 90%;
-  width: 130px;
-  height: 38px;
-}
-
 .button {
-  font-family: var(), fantasy;
+  font-family: var(--accent-font), fantasy;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -276,22 +264,6 @@ main {
   transform: translateX(0);
 }
 
-.save_icon-floppy {
-  position: relative;
-  width: 2rem;
-  justify-self: center;
-  color: #fff;
-  z-index: 2;
-  mix-blend-mode: difference;
-}
-
-@media (width >= 1024px) {
-
-  .save_icon-floppy {
-    width: 21px;
-  }
-}
-
 .button:focus {
   outline: none;
 }
@@ -305,15 +277,29 @@ main {
   transform: translateX(100%);
 }
 
-.section_window {
-  margin-block-end: 100px;
+.button__text {
+  font-family: var(--accent-font), fantasy;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 90%;
+  position: relative;
+  color: #fff;
+  z-index: 2;
+  mix-blend-mode: difference;
 }
 
-@media (width >= 1024px) {
+.card__like-button {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 90%;
+  width: 130px;
+  height: 38px;
+}
 
-  .section_window__save {
-    padding: 20px;
-  }
+/* section window */
+
+.section_window {
+  margin-block-end: 100px;
 }
 
 .save__button {
@@ -332,18 +318,30 @@ main {
   }
 }
 
-/*dialog*/
-
-.button__text {
-  font-family: var(--accent-font), fantasy;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 90%;
+.save_icon-floppy {
   position: relative;
+  width: 2rem;
+  justify-self: center;
   color: #fff;
   z-index: 2;
   mix-blend-mode: difference;
 }
+
+@media (width >= 1024px) {
+
+  .save_icon-floppy {
+    width: 21px;
+  }
+}
+
+@media (width >= 1024px) {
+
+  .section_window__save {
+    padding: 20px;
+  }
+}
+
+/* dialog */
 
 .dialog_window {
   width: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
